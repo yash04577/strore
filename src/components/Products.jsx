@@ -41,32 +41,18 @@ const Products = () => {
         products.map((elem) => {
 
           if(context.getCategory() === ""){
-              const data = {
-                imageUrl: elem.image,
-                title: elem.title,
-                price: elem.price
-              }
-  
-              // console.log(data);
   
               return (
-                <Card elemData={data}></Card>
+                <Card elemData={elem}></Card>
               )
   
           }
 
           else{
             if (elem.category === context.getCategory()) {
-              const data = {
-                imageUrl: elem.image,
-                title: elem.title,
-                price: elem.price
-              }
-  
-              // console.log(data);
-  
+             
               return (
-                <Card elemData={data}></Card>
+                <Card elemData={elem}></Card>
               )
             }
   

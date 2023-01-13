@@ -92,9 +92,8 @@ footer {
 }
 
 .card :hover{
-  /* background-color: aqua; */
-  /* color: blueviolet; */
   color: crimson;
+ 
 }
 
 .cardBody {
@@ -147,4 +146,14 @@ footer {
   display: flex;
   flex-wrap: wrap;
   /* justify-content: space-around; */
+}
+
+
+/* cart starts here */
+/* cart starts here */
+/* cart starts here */
+
+.cartContainer{
+  display: flex;
+  flex-flow: wrap row;
 }

@@ -11,6 +11,12 @@ const Navbar = () => {
         context.setCat(filter);
     }
 
+    const cartHandler = (e) =>{
+        // window.alert("cart not avilabel")
+        // console.log("cart ", e);
+        // context.updateCartItems(e);
+    }
+
     return (
         <>
             <nav>
@@ -21,11 +27,12 @@ const Navbar = () => {
                 </div>
                 <div className="navRightDiv">
                     <ul>
-                        <li><Link to={"/"} onClick={()=>{clickHandler("")}}>All Products</Link></li>
+                        <li><Link to={"/"} onClick={()=>{clickHandler("")}}>Home</Link></li>
                         <li><Link to={"#"} onClick={()=>clickHandler("electronics")}>Electronics</Link></li>
                         <li><Link to={"#"} onClick={()=>clickHandler("jewelery")}>Jewelery</Link></li>
                         <li><Link to={"#"} onClick={()=>clickHandler("men's clothing")}>men's clothing</Link></li>
                         <li><Link to={"#"} onClick={()=>clickHandler("women's clothing")}>women's clothing</Link></li>
+                        <li><Link to={"/cart"} onClick={()=>cartHandler(this)}>Cart</Link></li>
                     </ul>
                 </div>
             </nav>

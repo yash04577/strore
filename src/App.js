@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Cart from './components/Cart'
 import Footer from './components/Footer'
 import Home from './components/Home'
 import Navbar from './components/Navbar'
@@ -13,6 +14,7 @@ function App() {
         <Navbar></Navbar>
         <Routes>
           <Route path='/' element={<Home></Home>}></Route>
+          <Route path='/cart' element={<Cart></Cart>}></Route>
         </Routes>
         <Footer></Footer>
       </StateManagement>
