@@ -43,6 +43,9 @@ const StateManagement = (props) => {
         setCartItem(cartItems=>[...cartItems, item])
     }
 
+    const removeItemFromCart = (title) =>{
+        setCartItem(cartItems.filter(item => item.title !== title));
+    }
 
     const updateData = (filter) =>{
         // products.filter((elem)=>{
@@ -57,7 +60,7 @@ const StateManagement = (props) => {
     }
     
   return (
-    <Context.Provider value={{getData, setData, updateData, getAllProduct, getCategory, setCat, getCartItems, updateCartItems}}>
+    <Context.Provider value={{getData, setData, updateData, getAllProduct, getCategory, setCat, getCartItems, updateCartItems, removeItemFromCart}}>
         {props.children}
     </Context.Provider>
   )

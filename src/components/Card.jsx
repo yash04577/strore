@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import { Link } from "react-router-dom"
 import Context from "../context/Context"
 
@@ -11,6 +11,11 @@ const Card = (props) => {
         // console.log("added", e)
         context.updateCartItems(e);
 
+    }
+
+    const removeHandler = (title) =>{
+        context.removeItemFromCart(title);
+        // window.alert("removed")
     }
 
     return (
@@ -30,7 +35,10 @@ const Card = (props) => {
                             &#8377;{props.elemData.price}
                         </div>
                         <div className='cardAddBtn'>
-                        <Link onClick={()=> clickHandler(props.elemData)}>Add To Cart</Link>
+                            <Link onClick={() => clickHandler(props.elemData)}>Add To Cart</Link>
+                        </div>
+                        <div className='cardRemoveBtn'>
+                            <Link onClick={() => removeHandler(props.elemData.title)}>Remove From Cart</Link>
                         </div>
                     </div>
                 </div>
