@@ -9,18 +9,53 @@ const Card = (props) => {
 
     const clickHandler = (e) => {
         // console.log("added", e)
+
         context.updateCartItems(e);
 
     }
 
-    const removeHandler = (title) =>{
+    const removeHandler = (title) => {
         context.removeItemFromCart(title);
         // window.alert("removed")
     }
 
-    return (
+    // console.log("cart ckeck = ", props.cartCheck);
 
-        <>
+    if(props.cartCheck){
+        return(
+            <>
+            <div className="card">
+                <div className="cardBody">
+                    <div className="cardImg">
+                        <img src={props.elemData.image} alt="" />
+                    </div>
+                    <div className="cardData">
+
+                        <div className="cardTitle">
+                            {props.elemData.title}
+                        </div>
+                        <div className="cardPrice">
+                            &#8377;{props.elemData.price}
+                        </div>
+                        {/* <div className='cardAddBtn'>
+                            <Link onClick={() => clickHandler(props.elemData)}>Add To Cart</Link>
+                        </div> */}
+
+                        <div className='cardRemoveBtn'>
+                            <Link onClick={() => removeHandler(props.elemData.title)}>Remove From Cart</Link>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            </>
+        )
+    }
+
+   else{
+
+        return(
+            <>
             <div className="card">
                 <div className="cardBody">
                     <div className="cardImg">
@@ -37,14 +72,51 @@ const Card = (props) => {
                         <div className='cardAddBtn'>
                             <Link onClick={() => clickHandler(props.elemData)}>Add To Cart</Link>
                         </div>
-                        <div className='cardRemoveBtn'>
+
+                        {/* <div className='cardRemoveBtn'>
                             <Link onClick={() => removeHandler(props.elemData.title)}>Remove From Cart</Link>
-                        </div>
+                        </div> */}
+
                     </div>
                 </div>
             </div>
-        </>
-    )
+            </>
+        )
+   }
+
+    // return (
+
+        
+
+
+    //     <>
+
+    //         <div className="card">
+    //             <div className="cardBody">
+    //                 <div className="cardImg">
+    //                     <img src={props.elemData.image} alt="" />
+    //                 </div>
+    //                 <div className="cardData">
+
+    //                     <div className="cardTitle">
+    //                         {props.elemData.title}
+    //                     </div>
+    //                     <div className="cardPrice">
+    //                         &#8377;{props.elemData.price}
+    //                     </div>
+    //                     <div className='cardAddBtn'>
+    //                         <Link onClick={() => clickHandler(props.elemData)}>Add To Cart</Link>
+    //                     </div>
+
+    //                     <div className='cardRemoveBtn'>
+    //                         <Link onClick={() => removeHandler(props.elemData.title)}>Remove From Cart</Link>
+    //                     </div>
+
+    //                 </div>
+    //             </div>
+    //         </div>
+    //     </>
+    // )
 }
 
 export default Card

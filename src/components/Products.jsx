@@ -40,10 +40,12 @@ const Products = () => {
         // })
         products.map((elem) => {
 
+          const inCart = false;
+
           if(context.getCategory() === ""){
   
               return (
-                <Card elemData={elem}></Card>
+                <Card elemData={elem} cartCheck={inCart}></Card>
               )
   
           }
@@ -52,7 +54,7 @@ const Products = () => {
             if (elem.category === context.getCategory()) {
              
               return (
-                <Card elemData={elem}></Card>
+                <Card elemData={elem} cartCheck={inCart}></Card>
               )
             }
   
