@@ -68,7 +68,7 @@ const SingleProduct = (props) => {
                         </div>
                         <div className="buttonContainer">
                             <div className="addCartBtn">
-                                <button>Add To Cart</button>
+                                <button onClick={()=>clickHandler(data)}>Add To Cart</button>
                             </div>
                         </div>
 
