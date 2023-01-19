@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import Home from './components/Home'
 import Navbar from './components/Navbar'
 import Products from './components/Products'
+import SingleProduct from './components/SingleProduct'
 import StateManagement from './context/StateManagement'
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home></Home>}></Route>
           <Route path='/cart' element={<Cart></Cart>}></Route>
+          <Route path='/singleproduct' element={<SingleProduct></SingleProduct>}></Route>
         </Routes>
         <Footer></Footer>
       </StateManagement>

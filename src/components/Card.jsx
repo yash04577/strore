@@ -11,12 +11,19 @@ const Card = (props) => {
         // console.log("added", e)
 
         context.updateCartItems(e);
+        // e.style.color = "red";
 
     }
 
     const removeHandler = (title) => {
         context.removeItemFromCart(title);
         // window.alert("removed")
+    }
+
+    const showMoreHandler = (elem) =>{
+        console.log("single")
+        context.updateSingleProduct(elem);
+        // window.location = "/singleproduct"
     }
 
     // console.log("cart ckeck = ", props.cartCheck);
@@ -73,9 +80,9 @@ const Card = (props) => {
                             <Link onClick={() => clickHandler(props.elemData)}>Add To Cart</Link>
                         </div>
 
-                        {/* <div className='cardRemoveBtn'>
-                            <Link onClick={() => removeHandler(props.elemData.title)}>Remove From Cart</Link>
-                        </div> */}
+                        <div className='showMoreBtn'>
+                            <Link onClick={()=>showMoreHandler(props.elemData)} to={"/singleproduct"}>Show More</Link>
+                        </div>
 
                     </div>
                 </div>

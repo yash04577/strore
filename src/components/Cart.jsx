@@ -12,6 +12,7 @@ const Cart = () => {
             <div className="cartContainer">
 
                 {
+
                     context.getCartItems().map((elem) => {
 
                         return (
